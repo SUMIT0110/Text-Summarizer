@@ -80,44 +80,44 @@ Existing solutions are often:
 │  │  • Text Input    │  • Summary Display                  │ │
 │  │  • Statistics    │  • Compression Metrics              │ │
 │  └──────────────────┴─────────────────────────────────────┘ │
-│  ┌──────────────────────────────────────────────────────────┐ │
-│  │   Sidebar Configuration                                  │ │
-│  │  • Preset Selector (Short/Medium/Long)                  │ │
-│  │  • Advanced Parameters (Max/Min Length)                 │ │
-│  │  • Model Information                                    │ │
-│  └──────────────────────────────────────────────────────────┘ │
+│  ┌────────────────────────────────────────────────────────┐ │
+│  │   Sidebar Configuration                                │ │
+│  │  • Preset Selector (Short/Medium/Long)                 │ │
+│  │  • Advanced Parameters (Max/Min Length)                │ │
+│  │  • Model Information                                   │ │
+│  └────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────┘
                             ↓
                             ↓
 ┌─────────────────────────────────────────────────────────────┐
 │              Summarization Service Layer                    │
-│  ┌─────────────┐  ┌──────────────┐  ┌────────────────────┐ │
-│  │Text Cleaner │→ │Text Chunker  │→ │Summary Processor   │ │
-│  └─────────────┘  └──────────────┘  └────────────────────┘ │
+│  ┌─────────────┐  ┌──────────────┐  ┌────────────────────┐  │
+│  │Text Cleaner │→ │Text Chunker  │→ │Summary Processor   │  │
+│  └─────────────┘  └──────────────┘  └────────────────────┘  │
 │         ↓               ↓                     ↓             │
-│   • Normalize       • Split by      • Merge chunks         │
-│   • Remove noise      sentences     • Recursive combine   │
-│   • Fix encoding    • 512 token     • Beam search        │
-│                       limit          • Quality control    │
+│   • Normalize       • Split by      • Merge chunks          │
+│   • Remove noise      sentences     • Recursive combine     │
+│   • Fix encoding    • 512 token     • Beam search           │
+│                       limit          • Quality control      │
 └─────────────────────────────────────────────────────────────┘
                             ↓
                             ↓
 ┌─────────────────────────────────────────────────────────────┐
 │           BART Large CNN Transformer Model                  │
 │                                                             │
-│  • 430M Parameters                                         │
-│  • 12 Encoder Layers, 12 Decoder Layers                   │
-│  • Pre-trained on CNN News Articles                        │
-│  • Sequence-to-Sequence Architecture                      │
-│  • Beam Search Decoding (num_beams=4)                     │
+│  • 430M Parameters                                          │
+│  • 12 Encoder Layers, 12 Decoder Layers                     │
+│  • Pre-trained on CNN News Articles                         │
+│  • Sequence-to-Sequence Architecture                        │
+│  • Beam Search Decoding (num_beams=4)                       │
 └─────────────────────────────────────────────────────────────┘
                             ↓
                             ↓
 ┌─────────────────────────────────────────────────────────────┐
 │              Output & Caching Layer                         │
-│  • GPU Memory Cache (Model Loaded Once)                   │
-│  • Summary Storage (Session State)                         │
-│  • Performance Metrics (Processing Time)                  │
+│  • GPU Memory Cache (Model Loaded Once)                     │
+│  • Summary Storage (Session State)                          │
+│  • Performance Metrics (Processing Time)                    │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -173,10 +173,6 @@ User Display (Streamlit UI)
 ### Testing & Quality
 - **unittest** (built-in) - Unit testing framework
 - **16+ Test Cases** - Comprehensive test coverage across 6 test classes
-
-### Hardware Support
-- **CUDA-capable GPU** (optional but recommended for 5-10x speedup)
-- **CPU Fallback** for systems without GPU
 
 ---
 
@@ -559,16 +555,16 @@ coverage report
 
 ## 🌟 Key Differentiators
 
-| Feature | Benefit |
-|---------|---------|
-| **Preset System** | Intuitive selection without ML knowledge |
+| Feature              | Benefit |
+|---------------------------|------------------------------------------|
+| **Preset System**         | Intuitive selection without ML knowledge |
 | **Long Document Support** | Handle texts of any length automatically |
-| **GPU Acceleration** | 5-10x faster with CUDA |
-| **Model Caching** | Efficient resource usage |
-| **Live Metrics** | Real-time compression visualization |
-| **Deterministic Output** | Reproducible, consistent results |
-| **Comprehensive Logging** | Debug issues easily |
-| **Full Test Coverage** | Production reliability |
+| **GPU Acceleration**      | 5-10x faster with CUDA                   |
+| **Model Caching**         | Efficient resource usage                 |
+| **Live Metrics**          | Real-time compression visualization      |
+| **Deterministic Output**  | Reproducible, consistent results         |
+| **Comprehensive Logging** | Debug issues easily                      |
+| **Full Test Coverage**    | Production reliability                   |
 
 ---
 
@@ -579,33 +575,6 @@ coverage report
 - ✅ **Open Source**: Full transparency
 - ✅ **GDPR Compliant**: Safe for sensitive documents
 - ✅ **No Network Required**: Works offline
-
----
-
-## 📈 Performance Benchmarks
-
-| Scenario | Time |
-|----------|------|
-| First Run | 10-15s (model load) |
-| 200-word text | 2-3s |
-| 5000-word text | 5-10s |
-| Cached inference | 80% faster than first run |
-| GPU vs CPU | 5-10x speedup |
-
----
-
-## 🤝 Contributing
-
-1. Fork repository
-2. Create feature branch
-3. Commit with clear messages
-4. Push and submit Pull Request
-
----
-
-## 📄 License
-
-MIT License - See LICENSE file for details
 
 ---
 
