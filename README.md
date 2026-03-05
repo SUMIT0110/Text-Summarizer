@@ -1,31 +1,5 @@
 # 🚀 AI Text Summarizer
 
-> **Production-Ready Intelligent Text Summarization System**  
-> Powered by BART Transformers with Streamlit Web Interface
-
-![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat-square&logo=python)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.6+-red?style=flat-square&logo=pytorch)
-![Transformers](https://img.shields.io/badge/Transformers-4.30+-orange?style=flat-square&logo=huggingface)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-green?style=flat-square&logo=streamlit)
-![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
-
----
-
-## 📋 Table of Contents
-
-1. [Problem Statement](#problem-statement)
-2. [Solution Overview](#solution-overview)
-3. [Architecture](#architecture)
-4. [Tech Stack](#tech-stack)
-5. [Model Details](#model-details)
-6. [Installation](#installation)
-7. [How to Run](#how-to-run)
-8. [Example Input & Output](#example-input--output)
-9. [Future Improvements](#future-improvements)
-10. [Project Documentation](#project-documentation)
-
----
-
 ## 🎯 Problem Statement
 
 In today's information-saturated world, professionals face:
